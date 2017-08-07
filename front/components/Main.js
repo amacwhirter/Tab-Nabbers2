@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router';
 import { Sidebar, Segment, Button, Menu, Image, Icon, Header } from 'semantic-ui-react'
 import Footer from "./common/Footer";
 
-import css from "../../public/css/main.scss";
+import css from "../public/css/main.scss";
 
 
 class Main extends Component {

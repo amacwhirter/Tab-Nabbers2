@@ -2,7 +2,7 @@
  * Created by esterlingaccime on 7/13/17.
  */
 import React from "react";
-import css from "../../public/css/event.scss";
+import css from "../public/css/event.scss";
 import { Header, Icon } from 'semantic-ui-react'
 
 

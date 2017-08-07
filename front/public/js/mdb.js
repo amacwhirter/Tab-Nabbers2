@@ -2515,7 +2515,7 @@ m.isFunction(t)&&t(null,!0)}),f.queue(a,m.isString(v)?v:"",[])),"stop"===y?(i(a)
 			clearTimeout(timeout);
 			timeout = setTimeout(function(){
 				each(Chart.instances,function(instance){
-					// If the responsive flag is set in the chart instance config
+					// If the responsive flag is set in the chart instance routes
 					// Cascade the resize event down to the chart.
 					if (instance.options.responsive){
 						instance.resize(instance.render, true);

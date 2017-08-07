@@ -16,7 +16,7 @@ var db = require("../models"),
 
 var path = require('path'), //used for file path
     fs = require('fs-extra'),
-    atlanta = require('../public/atlanta.json');
+    atlanta = require('../../front/public/atlanta.json');
 
 var gtBootcamp = atlanta.children[0].children,
     gtCohort1 = gtBootcamp[0].children,
@@ -149,6 +149,10 @@ router.post("/sign-in", function(req, res) {
         });
 });
 
+
+router.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname + "/../../front/public/index.html"));
+});
 router.get("/signout", function(req, res) {
     res.redirect("/");
 })
@@ -386,14 +390,14 @@ router.get("/map", function(req, res) {
             }
         });
 
-        fs.readFile('./app/public/atlanta.json', 'utf8', function readFileCallback(err, data) {
+        fs.readFile('../../public/atlanta.json', 'utf8', function readFileCallback(err, data) {
             if (err) {
                 console.log(err);
             } else {
                 json = JSON.stringify(atlanta); //convert it back to json
                 console.log(json);
-                fs.writeFile('./app/public/atlanta.json', json, 'utf8'); // write it back
-                res.sendFile(path.join(__dirname + "/../public/index.html"));
+                fs.writeFile('../../public/atlanta.json', json, 'utf8'); // write it back
+                res.sendFile(path.join(__dirname + "/../../public/index.html"));
 
             }
         });
@@ -403,7 +407,7 @@ router.get("/map", function(req, res) {
 
 
 router.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/index.html"));
+    res.sendFile(path.join(__dirname + "/../../front/public/index.html"));
 });
 
 module.exports = router;

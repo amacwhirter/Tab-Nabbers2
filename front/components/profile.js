@@ -7,7 +7,7 @@ import fetch from "../utils/api";
 
 import {Image} from 'cloudinary-react';
 
-import css from "../../public/css/profile.scss";
+import css from "../public/css/profile.scss";
 
 
 
